@@ -1,0 +1,95 @@
+﻿@model Demo.Models.UserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<fieldset>
+    <legend>
+        User Registration
+    </legend>
+
+    @using (Html.BeginForm("Register","Account",FormMethod.Post))
+    {
+<table>
+
+
+
+
+    <tr></tr>
+    <tr>
+        <td>@Html.LabelFor(a => a.FirstName)</td>
+
+        <td>@Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })</td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(a => a.FirstName, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(a => a.LasttName)</td>
+
+        <td>@Html.TextBoxFor(a => a.LasttName, new { @class = "form-control" })</td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(a => a.LasttName, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(a => a.Email)</td>
+
+        <td>@Html.TextBoxFor(a => a.Email, new { @class = "form-control" })</td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(a => a.Email, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(a => a.Password)</td>
+
+        <td>@Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "Password" })</td>
+
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(a => a.Password, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(a => a.ConfirmPassword)</td>
+
+        <td>@Html.TextBoxFor(a => a.ConfirmPassword, new { @class = "form-control", type = "Password" })</td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(a => a.ConfirmPassword, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="Register" class="btn btn-primary" />
+               
+            <input type="reset" value="Reset" class="btn btn-primary" />
+        </td>
+    </tr>
+    <tr >
+        <!--Show details are saved successfully message-->
+        <td>@Html.ValidationMessage("Error", null, new { @class = "alert alert-success" })</td>
+    </tr>
+
+</table>
+    }
+</fieldset>
