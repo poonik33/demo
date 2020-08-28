@@ -3,59 +3,53 @@
     ViewBag.Title = "Login";
 }
 
-,<fieldset>
+<fieldset>
     <legend>
         Login User
     </legend>
 
     @using (Html.BeginForm("Login", "Account", FormMethod.Post))
     {
- <table>
+ <div>
 
-     <tr>
-         <td>
+     <div>        
              @Html.LabelFor(m => m.Email)
-         </td>
-         <td>
-             @Html.TextBoxFor(m => m.Email)
-         </td>
-     </tr>
-     <tr>
-         <td></td>
-         <td>
+         
+             @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "Password" })
+         
+     </div>
+     <div>
+        
+         <div>
              @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text text-danger" })
-         </td>
-     </tr>
-     <tr>
-         <td>
+         </div>
+     </div>
+     <div>         
              @Html.LabelFor(m => m.Password)
-         </td>
-         <td>
-             @Html.PasswordFor(m => m.Password)
-         </td>
-     </tr>
-     <tr>
-         <td></td>
-         <td>
+        
+             @Html.PasswordFor(m => m.Password, new { @class = "form-control", type = "Password" })
+        
+     </div>
+     <div>
+         <div>
              @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text text-danger" })
-         </td>
-     </tr>
-     <tr>
-         <td>
-             <input type="submit" value="Login" />
-         </td>
-         <td>
-             <input type="reset" value="Reset" />
-         </td>
-     </tr>
+         </div>
+     </div>
+     <div style="margin-top:10px">
+         <div>
+             <input type="submit" value="Login" class="btn btn-primary"/>
+        
+             <input type="reset" value="Reset" class="btn btn-primary" />
+         </div>
+     </div>
 
-     <tr>
-         <td></td>
-         <td>
+     <div>
+        
+         <div>
              @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
-         </td>
-     </tr>
- </table>
+         </div>
+     </div>
+ </div>
     }
   </fieldset>
 

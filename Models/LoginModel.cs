@@ -12,6 +12,7 @@ namespace Demo.Models
         [Display(Name = "Email : ")]
         public string Email { get; set; }
 
+
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password is Required")]
         [DataType(DataType.Password)]
         [Display(Name = "Password : ")]

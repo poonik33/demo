@@ -39,7 +39,9 @@ namespace Demo.Controllers
                     objUserDbEntities.Users.Add(objUser);
                     objUserModel = new UserModel();
                     objUserDbEntities.SaveChanges();
-                    objUserModel.Message = "User is successfully Added";
+                    
+                   // objUserModel.Message = "User is successfully Added";
+                    ViewBag.Message = "User is successfully Added";
                     return RedirectToAction("Index", "Home");
                 }
                 else 
@@ -57,7 +59,7 @@ namespace Demo.Controllers
             LoginModel ObjloginModel = new LoginModel();
 
             return View(ObjloginModel);
-        }
+        } 
 
 
         [HttpPost]
@@ -74,7 +76,8 @@ namespace Demo.Controllers
                  else
                 {
                     Session["Email"] = objLoginModel.Email;
-                    RedirectToAction("Index", "Home");
+
+                    return  RedirectToAction("Index", "Home");
                 }
             }
 

@@ -10,86 +10,92 @@
 
     @using (Html.BeginForm("Register","Account",FormMethod.Post))
     {
-<table>
+<div>
 
+    <div>
+        <div>@Html.LabelFor(a => a.FirstName)</div>
 
+        <div>@Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })</div>
+    </div>
 
-
-    <tr></tr>
-    <tr>
-        <td>@Html.LabelFor(a => a.FirstName)</td>
-
-        <td>@Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })</td>
-    </tr>
-
-    <tr>
-        <td></td>
-        <td>
+    <div>
+       
+        <div>
             @Html.ValidationMessageFor(a => a.FirstName, null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(a => a.LasttName)</td>
+        </div>
+    </div>
+    <div>
+        <div>@Html.LabelFor(a => a.LasttName)</div>
 
-        <td>@Html.TextBoxFor(a => a.LasttName, new { @class = "form-control" })</td>
-    </tr>
+        <div>@Html.TextBoxFor(a => a.LasttName, new { @class = "form-control" })</div>
+    </div>
 
-    <tr>
-        <td></td>
-        <td>
+    <div>
+       
+        <div>
             @Html.ValidationMessageFor(a => a.LasttName, null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(a => a.Email)</td>
+        </div>
+    </div>
+    <div>
+        <div>@Html.LabelFor(a => a.Email)</div>
 
-        <td>@Html.TextBoxFor(a => a.Email, new { @class = "form-control" })</td>
-    </tr>
+        <div>@Html.TextBoxFor(a => a.Email, new { @class = "form-control" })</div>
+    </div>
 
-    <tr>
-        <td></td>
-        <td>
+    <div>
+        
+        <div>
             @Html.ValidationMessageFor(a => a.Email, null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(a => a.Password)</td>
+        </div>
+    </div>
+    <div>
+        <div>@Html.LabelFor(a => a.Password)</div>
 
-        <td>@Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "Password" })</td>
+        <div>@Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "Password" })</div>
 
-    </tr>
+    </div>
 
-    <tr>
-        <td></td>
-        <td>
+    <div>
+        
+        <div>
             @Html.ValidationMessageFor(a => a.Password, null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(a => a.ConfirmPassword)</td>
+        </div>
+    </div>
+    <div>
+        <div>@Html.LabelFor(a => a.ConfirmPassword)</div>
 
-        <td>@Html.TextBoxFor(a => a.ConfirmPassword, new { @class = "form-control", type = "Password" })</td>
-    </tr>
+        <div>@Html.TextBoxFor(a => a.ConfirmPassword, new { @class = "form-control", type = "Password" })</div>
+    </div>
 
-    <tr>
-        <td></td>
-        <td>
+    <div>
+      
+        <div>
             @Html.ValidationMessageFor(a => a.ConfirmPassword, null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            <input type="submit" value="Register" class="btn btn-primary" />
-               
-            <input type="reset" value="Reset" class="btn btn-primary" />
-        </td>
-    </tr>
-    <tr >
-        <!--Show details are saved successfully message-->
-        <td>@Html.ValidationMessage("Error", null, new { @class = "alert alert-success" })</td>
-    </tr>
+        </div>
+    </div>
+    <div>
 
-</table>
+    </div>
+    <div style="margin-top:10px"  >
+             <input type="submit" value="Register" class="btn btn-primary" />
+               
+            <input type="reset" value="Reset" class="btn btn-primary"  />
+       
+    </div>
+    <div>
+        @if (ViewBag.Message != null)
+        {
+            <div class="text-success">@ViewBag.Message</div>
+        }
+        else
+        {
+
+            <div class="text-danger"></div>
+
+        }
+
+    </div>
+
+</div>
     }
 </fieldset>
